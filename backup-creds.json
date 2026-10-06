@@ -1,0 +1,9 @@
+
+Usme yeh paste karo:
+
+```json
+{
+  "note": "Backup your Firebase URL + Key here",
+  "firebaseUrl": "",
+  "firebaseKey": ""
+}
