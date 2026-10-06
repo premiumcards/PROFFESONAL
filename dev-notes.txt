@@ -1,0 +1,10 @@
+Project: 𝐒𝐡𝐚𝐢𝐥𝐞𝐬𝐡 𝐗 𝐋𝐢𝐯𝐞 : 𝐇𝐮𝐧𝐭𝐞𝐫 ☠️
+Developer: @Shailesh_hunterz
+Channel: https://t.me/+6gzQXYSTRZtkZWRl
+
+Files:
+- index.html    → Main app
+- README.md     → Documentation
+- backup-creds.json → Credentials backup template
+
+Google Sheet Logger: enabled via SHEET_WEBHOOK_URL
